@@ -56,12 +56,18 @@ public class FarmFinder {
 		HttpSession session = request.getSession();
 		
 		Cart cart = (Cart) session.getAttribute("cartSession");
-		
+		 double totalp = 0;
 		if(cart==null){
-			
-			
+			cart = new Cart();
+			cart.addtoList(map);
+            totalp = Double.parseDouble(quantity) * product.getPrice(); 
+		}else {
+			totalp = cart.getTotalPrice() + Double.parseDouble(quantity) * product.getPrice(); 
+			cart.addtoList(map);
 		}
-		return null;
+		cart.setTotalPrice(totalp);
+		session.setAttribute("cart", cart);
+		return Response.status(201).entity(cart).build();
 		
 	}
 	
