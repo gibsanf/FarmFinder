@@ -1,3 +1,4 @@
+
 package com.farmfinder.services;
 
 import java.util.HashMap;
@@ -42,7 +43,7 @@ public class FarmFinder {
 		return Response.status(201).entity(cat).build() ;
 	}
 
-/* add products to cart*/
+/* add products to cart  Gibsan Abdu*/
 	
 	@PUT
 	@Path("/addtoCart")
@@ -77,8 +78,10 @@ public class FarmFinder {
 		session.setAttribute("cartSession", cart);
 		return Response.status(201).entity(cart).build();	
 	}
+/*.................................................................................... */
 	
-/*  List products stored in cart*/
+	
+/*  List products stored in cart  GIBSAN ABDU */
 	
 	@GET
 	@Path("/listallCart")
@@ -90,7 +93,10 @@ public class FarmFinder {
 		return Response.status(201).entity(cart).build();
 	}
 	
-/*  Delete single product stored in cart*/	
+/*.................................................................................... */
+	
+	
+/*  Delete single product stored in cart  GIBSAN ABDU */	
 	
 	@DELETE
 	@Path("/deleteCart/{index}")
@@ -104,5 +110,19 @@ public class FarmFinder {
 		return Response.status(201).entity(index).build();	
 	}
 
-
+/*.................................................................................... */
+		
+/*  Delete all product stored in cart GIBSAN ABDU */
+	
+	@DELETE
+	@Path("/deleteAllCart/{index}")
+	@Produces(MediaType.APPLICATION_JSON)	
+	public Response deleteAllCart(@Context HttpServletRequest request, @PathParam("index")String index){
+	
+		HttpSession session = request.getSession(false);
+		Cart cart = (Cart) session.getAttribute("cartSession");
+		List <HashMap> cartList = cart.getProdlst();
+		cartList.clear();
+		return Response.status(201).entity(index).build();	
+	}
 }
