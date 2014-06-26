@@ -1,12 +1,16 @@
 package com.farmfinder.services;
 
 import java.util.HashMap;
+import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
+import javax.ws.rs.DELETE;
+import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
+import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.Context;
 import javax.ws.rs.core.MediaType;
@@ -30,12 +34,15 @@ public class FarmFinder {
 	public Response createFarm(){
 		ApplicationContext ctx = new AnnotationConfigApplicationContext(MongoConfig.class);
 		CategoryRepo repo = (CategoryRepo) ctx.getBean(CategoryRepo.class) ;
+		
 		/*Create new category class*/ 
 		Category cat = new Category() ;
 		cat.setName("Strawberry") ;		
 		repo.save(cat) ;
 		return Response.status(201).entity(cat).build() ;
 	}
+
+/* add products to cart*/
 	
 	@PUT
 	@Path("/addtoCart")
@@ -71,7 +78,9 @@ public class FarmFinder {
 		return Response.status(201).entity(cart).build();	
 	}
 	
+/*  List products stored in cart*/
 	
+	@GET
 	@Path("/listallCart")
 	@Produces(MediaType.APPLICATION_JSON)	
 	public Response listallCart(@Context HttpServletRequest request){
@@ -80,4 +89,20 @@ public class FarmFinder {
 		Cart cart = (Cart) session.getAttribute("cartSession");
 		return Response.status(201).entity(cart).build();
 	}
+	
+/*  Delete single product stored in cart*/	
+	
+	@DELETE
+	@Path("/deleteCart/{index}")
+	@Produces(MediaType.APPLICATION_JSON)	
+	public Response deleteCart(@Context HttpServletRequest request, @PathParam("index")String index){
+	
+		HttpSession session = request.getSession(false);
+		Cart cart = (Cart) session.getAttribute("cartSession");
+		List <HashMap> cartList = cart.getProdlst();
+		cartList.remove(Integer.parseInt(index));
+		return Response.status(201).entity(index).build();	
+	}
+
+
 }
