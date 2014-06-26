@@ -1,0 +1,75 @@
+body {
+font-family: "Helvetica Neue",Helvetica,Arial,sans-serif,segoe ui;
+font-size: 14px;
+line-height: 1.42857143;
+color: #333;
+background-color: #fff;
+}
+
+
+/* styles for sticky header */
+
+.navbar-wrapper .container .navbar-inverse{
+	 background-color: #056135;
+     border-color: #080808;
+}
+
+.navbar-wrapper .container {
+padding-right: 0;
+padding-left: 0;
+}
+
+.navbar-wrapper .container {
+/* padding-right: 15px; */
+/* padding-left: 15px; */
+}
+
+.container {
+width: 100%;
+}
+
+.navbar-default {
+background-color: #056135;
+border-color: #e7e7e7;
+color: #fff;
+background-color: #7FB86C;
+background: rgb(#056135230, 16,21);
+background: -moz-linear-gradient(90deg, rgb(230, 16,21) 30%, rgb(81, 4, 7) 70%);
+background: -webkit-linear-gradient(90deg, rgb(230, 16,21) 30%, rgb(81, 4, 7) 70%);
+background: -o-linear-gradient(90deg, rgb(230, 16,21) 30%, rgb(81, 4, 7) 70%);
+background: -ms-linear-gradient(90deg, rgb(230, 16,21) 30%, rgb(81, 4, 7) 70%);
+background: linear-gradient(180deg, #6DAC58 30%, #056135 70%);
+text-shadow: 1px 1px 5px #265203;
+font-family: helvetica;
+font-size: 16px;
+}
+
+.navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:hover, .navbar-default .navbar-nav>.active>a:focus {
+color: white;
+background-color:#056135;
+}
+
+.navbar-default .navbar-nav>li>a {
+color: white;
+font-family: segoe ui;
+font-size: 14px;
+}
+
+element.style {
+}
+
+.navbar-default .navbar-nav>li>a {
+background-color: #056135;
+border-color: #e7e7e7;
+color: #fff;
+background-color: #7FB86C;
+background: rgb(#056135230, 16,21);
+background: -moz-linear-gradient(90deg, rgb(230, 16,21) 30%, rgb(81, 4, 7) 70%);
+background: -webkit-linear-gradient(90deg, rgb(230, 16,21) 30%, rgb(81, 4, 7) 70%);
+background: -o-linear-gradient(90deg, rgb(230, 16,21) 30%, rgb(81, 4, 7) 70%);
+background: -ms-linear-gradient(90deg, rgb(230, 16,21) 30%, rgb(81, 4, 7) 70%);
+background: linear-gradient(180deg, #6DAC58 30%, #056135 70%);
+text-shadow: 1px 1px 5px #265203;
+font-family: helvetica;
+font-size: 16px;
+}

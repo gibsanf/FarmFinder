@@ -53,6 +53,7 @@ public class FarmFinder {
 		map.put("name", product.getName());
 		map.put("price", Double.toString(product.getPrice()));
 		map.put("quantity", quantity);
+		
 		HttpSession session = request.getSession();
 		
 		Cart cart = (Cart) session.getAttribute("cartSession");
@@ -66,11 +67,17 @@ public class FarmFinder {
 			cart.addtoList(map);
 		}
 		cart.setTotalPrice(totalp);
-		session.setAttribute("cart", cart);
-		return Response.status(201).entity(cart).build();
-		
+		session.setAttribute("cartSession", cart);
+		return Response.status(201).entity(cart).build();	
 	}
 	
 	
-	
+	@Path("/listallCart")
+	@Produces(MediaType.APPLICATION_JSON)	
+	public Response listallCart(@Context HttpServletRequest request){
+		
+		HttpSession session = request.getSession(false);
+		Cart cart = (Cart) session.getAttribute("cartSession");
+		return Response.status(201).entity(cart).build();
+	}
 }
