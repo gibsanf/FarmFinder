@@ -112,7 +112,7 @@ public class FarmFinder {
 
 /*.................................................................................... */
 		
-/*  Delete all product stored in cart GIBSAN ABDU */
+/*  Delete all product stored in cart / clear Cart GIBSAN ABDU */
 	
 	@DELETE
 	@Path("/deleteAllCart/{index}")

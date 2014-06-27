@@ -1,3 +1,5 @@
+/*  Created by Gibsan Abdu */
+
 package com.farmfinder.model;
 
 import java.util.ArrayList;

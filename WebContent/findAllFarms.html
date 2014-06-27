@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	<script>
+		//Example of how to use the metadata service.
+		farm = "/rest/farmfinder/"
+		$(document).ready(function(){
+			$.getJSON(farm+"farm", function(data){
+				//console.log(data) ;
+				$.each(data, function(key, value){
+					//console.log(value) ;
+					$(".farmList").append("<tr><td><p>" + value.name + "</p></td><td><p>" + value.city +"</p></td></tr>") ;
+				})
+			}) ;
+		})
+	</script>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<table class="farmList">
+		
+	</table>
+</body>
+</html>

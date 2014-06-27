@@ -3,12 +3,43 @@
 /* Padding below the footer and lighter body text */
 
 body {
-  padding-bottom: 40px;
+	/* padding-top :50px ;*/
+  padding-bottom: 100px;
   color: #5a5a5a;
 }
 
+.farmList{
+width: 60%;
+margin: 10%;
+height: 100%;
+font-family: helvetica;
+font-size: 18px;
+font-weight: 100;
+margin-left: 25%;
+line-height: 30px;
+}
 
-
+.farmlistdiv{
+height: auto;
+/* width: 300px; */
+width: 40%;
+position: center;
+position: absolute;
+/* top: 0; */
+center: 0;
+background-color: red;
+margin: 20px;
+margin-top: -200px;
+margin-left: 30%;
+margin-right: 30%;
+background: -webkit-linear-gradient(90deg, rgb(230, 16,21) 30%, rgb(81, 4, 7) 70%);
+background: -o-linear-gradient(90deg, rgb(230, 16,21) 30%, rgb(81, 4, 7) 70%);
+background: -ms-linear-gradient(90deg, rgb(230, 16,21) 30%, rgb(81, 4, 7) 70%);
+background: linear-gradient(180deg, #6DAC58 30%, #056135 70%);
+text-shadow: 1px 1px 5px #265203;
+color: white;
+border: 1px solid white;
+}
 /* CUSTOMIZE THE NAVBAR
 -------------------------------------------------- */
 
